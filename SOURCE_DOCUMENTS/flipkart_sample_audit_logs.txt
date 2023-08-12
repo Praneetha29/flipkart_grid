@@ -1,0 +1,33 @@
+﻿bindings:
+- members:
+  - serviceAccount:389270478984-compute@developer.gserviceaccount.com
+  role: roles/editor
+- members:
+  - user:samarthrawat1@gmail.com
+  role: roles/owner
+- members:
+  - user:anotheruser@example.com
+  role: roles/viewer
+- members:
+  - group:my-team@example.com
+  role: roles/developer
+- members:
+  - user:johndoe@example.com
+  role: roles/editor
+- members:
+  - user:janedoe@example.com
+  role: roles/viewer
+- members:
+  - serviceAccount:project-api@project-id.iam.gserviceaccount.com
+  role: roles/cloudfunctions.developer
+- members:
+  - group:security-team@example.com
+  role: roles/iam.securityReviewer
+- members:
+  - user:qauser@example.com
+  role: roles/clouddebugger.agent
+- members:
+  - user:marketing@example.com
+  role: roles/storage.objectCreator
+etag: BwVE5d-EIh0=
+version: 1
