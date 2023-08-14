@@ -1,0 +1,220 @@
+:root {
+    --color-primary: #047BD5;
+    --color-complimentary: #F8E831;
+    --border-radius: 0.2778rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    appearance: none;
+    border: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+html {
+    font-size: 1rem;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+}
+
+#header {
+    background: var(--color-primary);
+    z-index: 997;
+    padding: 15px 0;
+    box-shadow: 0rem 0.2222rem 0.2778rem 0rem #b8babc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 1rem;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: auto;
+}
+
+.navbar ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+.navbar li {
+    margin-right: 3rem;
+}
+
+.navbar a,
+.navbar a:focus {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1rem;
+    color: #fff;
+    transition: 0.3s;
+    border-bottom: 3px solid transparent;
+    padding: 5px 2px;
+}
+
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 20px;
+    gap: 20px;
+}
+
+.left-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.content-box {
+    display: flex;
+    gap: 20px;
+    flex: 1;
+    flex-direction: column;
+}
+
+.right-content {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    border: 1px solid var(--color-primary);
+}
+
+.drag-area {
+    border: 2px solid #fff;
+    height: 500px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-primary);
+    flex-direction: column;
+    width: 100%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.drag-area.active {
+    border: 2px solid #fff;
+}
+
+.drag-area .icon {
+    font-size: 100px;
+    color: #fff;
+}
+
+.drag-area header {
+    font-size: 30px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.drag-area span {
+    font-size: 25px;
+    font-weight: 500;
+    color: #fff;
+    margin: 10px 0 15px 0;
+}
+
+.drag-area button {
+    padding: 10px 25px;
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    background: #fff;
+    color: var(--color-primary);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.drag-area img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.save-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(135deg,#047BD5 , #5E16CD);
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    text-align: center;
+    transition: background-color 0.3s ease-in-out;
+    margin-top: auto;
+}
+
+.save-button:hover {
+    background: linear-gradient(135deg, #E6AD4B, #F9ED59);
+}
+
+.text-box {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    flex: 1 0 calc(50% - 15px);
+}
+
+.text-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    resize: none;
+    font-size: 16px;
+}
+
+.text-input:focus {
+    border-color: var(--color-primary);
+}
+
+.text-output{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    transition: 0.3s;
+    width: 100%;
+}
+
+.text-heading{
+    margin-bottom: 10px;
+}
