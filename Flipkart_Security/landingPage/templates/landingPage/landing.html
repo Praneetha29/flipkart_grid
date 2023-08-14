@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guardian</title>
-</head>
+
+    {% load static %}
+
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap">
 <link
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
@@ -13,7 +15,8 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap">
 
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp" rel="stylesheet" />
-<link href="landing.css" rel="stylesheet">
+<link href="{% static 'landingPage/landing.css' %}" rel="stylesheet">
+</head>
 
 <body>
     <header id="header">
