@@ -69,3 +69,4 @@ qa = RetrievalQA.from_chain_type(
 
 res = qa.run("how many people have the role of editor")
 print(res)
+
