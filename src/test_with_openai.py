@@ -68,9 +68,9 @@ qa = RetrievalQA.from_chain_type(
     }
 )
 
-res = qa.run("""NO ONE SHOULD HAVE role: roles/owner
-             NO ONE SHOULD HAVE role: roles/editor
-             NO ONE SHOULD HAVE role: roles/owner
-             """)
-print(res)
+# res = qa.run("""NO ONE SHOULD HAVE role: roles/owner
+#              NO ONE SHOULD HAVE role: roles/editor
+#              NO ONE SHOULD HAVE role: roles/owner
+#              """)
+# print(res)
 
