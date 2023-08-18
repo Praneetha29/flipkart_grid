@@ -55,7 +55,7 @@ prompt = PromptTemplate(
 )
 
 qa = RetrievalQA.from_chain_type(
-    llm=ChatOpenAI(model="gpt-3.5-turbo"),
+    llm=ChatOpenAI(model="gpt-4"),
     chain_type='stuff',
     retriever=retriever,
     verbose=True,
@@ -68,9 +68,9 @@ qa = RetrievalQA.from_chain_type(
     }
 )
 
-# res = qa.run("""NO ONE SHOULD HAVE role: roles/owner
-#              NO ONE SHOULD HAVE role: roles/editor
-#              NO ONE SHOULD HAVE role: roles/owner
-#              """)
-# print(res)
+result = qa.run("""NO ONE SHOULD HAVE role: roles/owner
+             NO ONE SHOULD HAVE role: roles/editor
+             NO ONE SHOULD HAVE role: roles/owner
+             """)
+print(result)
 
