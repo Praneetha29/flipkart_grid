@@ -11,7 +11,6 @@ from ingest import load_documents, split_documents, load_document_batch, load_si
 import os
 from dotenv import load_dotenv, find_dotenv
 import openai
-import tiktoken 
 
 
 from constants import SOURCE_DIRECTORY
