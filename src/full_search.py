@@ -45,9 +45,9 @@ def main():
 
     combine_prompt_template = """You are an helpful AI model that checks for user compliance, system privileges and rule violation in audit logs.You are given rules and context. Check if any rule is violated  in the context
 IMPORTANT DO NOT ANSWER WITH "As an AI model..." anytime 
-IMPORTANT when you find a violation, quote it and tell how it can be fixed 
+IMPORTANT when you find a violation, quote the documentation that contains the violation and tell how it can be fixed, provide detailed remedial action. 
 Go line by line and check for violations. Make sure you do not miss a violation if there is one. 
-Use the following context (delimited by <ctx></ctx>), rules (delimited by <rule></rule>) the chat history (delimited by <hs></hs>):
+Use the following context (delimited by <ctx></ctx>), rules (delimited by <rule></rule>):
 ------
 <rule>
 {question}
