@@ -38,13 +38,17 @@ def form_view(request):
         #      NO ONE SHOULD HAVE role: roles/owner""")
     # context = {'form':data_file()}
     print(str(request.POST))
-    ruleStr=request.POST.get('rules')
+    ruleStr = request.POST.get('rules')
     print(ruleStr)
     # ingester.runs()
-    x=fs.main(ruleStr)
+    result_dict = fs.main(ruleStr)
+    output_text = result_dict.get('output_text', '').strip()
     print('-'*34)
-    print(x)
-    return render(request, 'inputPage/input.html')
+    print(output_text)
+    context = {
+        'output': output_text
+    }
+    return render(request, 'inputPage/input.html', context)
 
 
 def button_full(request):

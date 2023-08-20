@@ -35,14 +35,15 @@ def load_document_batch(filepaths):
     # create a thread pool
     with ThreadPoolExecutor(len(filepaths)) as exe:
         # load files
-        futures = [exe.submit(load_single_document, name) for name in filepaths]
+        futures = [exe.submit(load_single_document, name)
+                   for name in filepaths]
         # collect data
         data_list = [future.result() for future in futures]
         # return data and file paths
         return (data_list, filepaths)
 
 
-def load_documents(source_dir: str) -> list[Document]:
+def load_documents(source_dir: str):
     # Loads all documents from the source documents directory
     all_files = os.listdir(source_dir)
     paths = []
@@ -61,7 +62,7 @@ def load_documents(source_dir: str) -> list[Document]:
         # split the load operations into chunks
         for i in range(0, len(paths), chunksize):
             # select a chunk of filenames
-            filepaths = paths[i : (i + chunksize)]
+            filepaths = paths[i: (i + chunksize)]
             # submit the task
             future = executor.submit(load_document_batch, filepaths)
             futures.append(future)
@@ -74,7 +75,7 @@ def load_documents(source_dir: str) -> list[Document]:
     return docs
 
 
-def split_documents(documents: list[Document]) -> tuple[list[Document], list[Document]]:
+def split_documents(documents):
     # Splits documents for correct Text Splitter
     text_docs, python_docs = [], []
     for doc in documents:
@@ -121,7 +122,8 @@ def runs():
     logging.info(f"Loading documents from {SOURCE_DIRECTORY}")
     documents = load_documents(SOURCE_DIRECTORY)
     text_documents, python_documents = split_documents(documents)
-    text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
+    text_splitter = RecursiveCharacterTextSplitter(
+        chunk_size=1000, chunk_overlap=200)
     python_splitter = RecursiveCharacterTextSplitter.from_language(
         language=Language.PYTHON, chunk_size=1000, chunk_overlap=200
     )
@@ -149,5 +151,3 @@ def runs():
     )
     db.persist()
     db = None
-
-
