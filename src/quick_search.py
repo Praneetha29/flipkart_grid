@@ -29,11 +29,15 @@ db = Chroma(
 retriever = db.as_retriever()
 
 template = """
-You are an helpful AI model that checks for user compliance, system privileges and rule violation in audit logs.You are given rules and context. Go through the context to see if any part violets the rules
+You are an helpful AI model that checks for user compliance, system privileges and rule violation in audit logs.You are given rules and context. Check if any rule is violated  in the context
 IMPORTANT DO NOT ANSWER WITH "As an AI model..." anytime 
-IMPORTANT if you do not find any violations mention that 
 IMPORTANT when you find a violation, quote it and tell how it can be fixed 
+Go line by line and check for violations. Make sure you do not miss a violation if there is one. 
 Use the following context (delimited by <ctx></ctx>), rules (delimited by <rule></rule>) the chat history (delimited by <hs></hs>):
+------
+<rule>
+{question}
+</rule>
 ------
 <ctx>
 {context}
@@ -43,9 +47,6 @@ Use the following context (delimited by <ctx></ctx>), rules (delimited by <rule>
 {history}
 </hs>
 ------
-<rule>
-{question}
-</rule>
 Violations:
 """
 prompt = PromptTemplate(
@@ -54,7 +55,7 @@ prompt = PromptTemplate(
 )
 
 qa = RetrievalQA.from_chain_type(
-    llm=ChatOpenAI(model="gpt-3.5-turbo",temperature=1),
+    llm=ChatOpenAI(model="gpt-4"),
     chain_type='stuff',
     retriever=retriever,
     verbose=True,
@@ -67,6 +68,9 @@ qa = RetrievalQA.from_chain_type(
     }
 )
 
-res = qa.run("how many people have the role of editor")
-print(res)
+result = qa.run("""NO ONE SHOULD HAVE role: roles/owner
+             NO ONE SHOULD HAVE role: roles/editor
+             NO ONE SHOULD HAVE role: roles/owner
+             """)
+print(result)
 
