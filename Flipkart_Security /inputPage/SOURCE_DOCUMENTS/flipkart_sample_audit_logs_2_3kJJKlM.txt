@@ -1,0 +1,66 @@
+﻿{
+  "protoPayload": {
+    "@type": "type.googleapis.com/google.cloud.audit.AuditLog",
+    "status": {},
+    "authenticationInfo": {
+      "principalEmail": "user@example.com"
+    },
+    "serviceName": "compute.googleapis.com",
+    "methodName": "instances.create",
+    "authorizationInfo": [
+      {
+        "resource": "projects/my-gcp-project-id/zones/us-central1-a/instances/my-instance",
+        "permission": "compute.instances.create",
+        "granted": true
+      }
+    ],
+    "requestMetadata": {
+      "callerIp": "203.0.113.45",
+      "callerSuppliedUserAgent": "gcloud/1.0"
+    },
+    "serviceData": {
+      "@type": "type.googleapis.com/google.appengine.legacy.AuditData",
+      "policyDelta": {
+        "bindingDeltas": [
+          {
+            "action": "ADD",
+            "role": "roles/compute.instanceAdmin",
+            "member": "user:admin@example.com"
+          },
+          {
+            "action": "REMOVE",
+            "role": "roles/compute.viewer",
+            "member": "user:viewer@example.com"
+          }
+        ]
+      }
+    },
+    "request": {
+      "resource": "projects/my-gcp-project-id/zones/us-central1-a/instances",
+      "instanceTemplate": "projects/my-gcp-project-id/global/instanceTemplates/my-template",
+      "labels": {
+        "environment": "production"
+      }
+    },
+    "response": {
+      "bindings": [
+        {
+          "role": "roles/compute.instanceAdmin",
+          "members": ["user:admin@example.com"]
+        }
+      ]
+    }
+  },
+  "insertId": "53179D9A9B559.AD6ACC7.B40604EF",
+  "resource": {
+    "type": "gce_instance",
+    "labels": {
+      "project_id": "my-gcp-project-id",
+      "instance_id": "1234567890123456789",
+      "zone": "us-central1-a"
+    }
+  },
+  "timestamp": "2023-08-12T12:34:56.789Z",
+  "severity": "NOTICE",
+  "logName": "projects/my-gcp-project-id/logs/cloudaudit.googleapis.com%2Factivity"
+}
