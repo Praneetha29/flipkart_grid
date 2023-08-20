@@ -93,6 +93,11 @@ With the flexibility to handle various log formats and compliance standards, the
 </ol>
 
 --------
+### Deployed Link 
+---
+
+[Deployed Link](http://52.255.177.160)
+[Deployed Video](https://drive.google.com/file/d/10bg293V7i0WMPWPftFM3b8gGsHPIXGL1/view?usp=drive_link)
 
 # Note 
-- Due to resource constraints we have used openai models, We believe we can produce similar results if we have access to computational resources.
+- Due to resource constraints, we have used OpenAI models, We believe we can produce similar results if we have access to computational resources.
