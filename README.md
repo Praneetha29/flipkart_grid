@@ -19,6 +19,51 @@ Contents
 
 ### Installation:
 ---
+#### Setup Virtual Environment
+
+To ensure a clean and isolated environment for your application, it's recommended to use a virtual environment. Here's how you can set it up:
+
+```
+cd {your-repo}
+python -m virtualenv venv
+```
+Activating the Virtual Environment
+- On Windows:
+```
+venv\Scripts\activate
+```
+
+- On macOS and Linux:
+
+```
+source venv/bin/activate
+```
+
+#### Install Dependencies
+With the virtual environment activated, install the required dependencies using pip and the requirements.txt file:
+```
+pip install -r requirements.txt
+```
+#### Setup .env
+To run the LLM we need to create a .env file and add our openai api key to it 
+
+```
+OPENAI_API_KEY = "{your_api_key}"
+```
+
+#### Start the Application
+Navigate to the "Flipkart_Security" directory, which contains the application code:
+```
+cd Flipkart_Security
+```
+
+Run the following command to start the application:
+```
+python manage.py runserver
+```
+
+#### Access the Application
+Open your web browser and go to http://127.0.0.1:8000/ 
 
 ### Tech-Stacks Used:
 ---
@@ -45,3 +90,8 @@ Alongside identifying compliance breaches, the system can provide actionable ins
 With the flexibility to handle various log formats and compliance standards, the solution can be applied across different systems and environments, ensuring consistency in compliance monitoring.
 </li></br>
 </ol>
+
+--------
+
+# Note 
+- Due to resource constraints we have used openai models, We believe we can produce similar results if we have access to computational resources
