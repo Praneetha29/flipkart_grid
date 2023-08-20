@@ -96,7 +96,7 @@ With the flexibility to handle various log formats and compliance standards, the
 ### Deployed Link 
 ---
 
-[Deployed Link](http://52.255.177.160)
+[Deployed Link](http://52.255.177.160) <br>
 [Deployed Video](https://drive.google.com/file/d/10bg293V7i0WMPWPftFM3b8gGsHPIXGL1/view?usp=drive_link)
 
 # Note 
