@@ -73,7 +73,8 @@ Open your web browser and go to http://127.0.0.1:8000/
 - OpenAI
 - Django
 - Javascript
-- Llama-2
+- Azure
+
 
 ### Use Cases
 ---
@@ -94,4 +95,4 @@ With the flexibility to handle various log formats and compliance standards, the
 --------
 
 # Note 
-- Due to resource constraints we have used openai models, We believe we can produce similar results if we have access to computational resources
+- Due to resource constraints we have used openai models, We believe we can produce similar results if we have access to computational resources.
